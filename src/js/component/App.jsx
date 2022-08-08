@@ -39,8 +39,9 @@ const App = (props) => {
 	
 	const SubmitForm = (e) => {
 		e.preventDefault();
+		let found = pendArray.find((objt) => objt.label.toLowerCase() == pendiente.toLowerCase());
 		if (pendiente !== ""){
-			if (pendArray.includes(pendiente) === false) {
+			if (pendArray.includes(found) === false) {
 				setPendArray([...pendArray, {
 					label: pendiente,
 					done: listo
